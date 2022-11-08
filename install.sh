@@ -11,4 +11,7 @@ sudo apt install nvidia-cudnn
 # Python stuff
 python3 -m pip install tensorflow tensorboard 
 python3 -m pip install gym install gym[all] torch torchvision torchaudio
-python3 -m pip install stable-baselines3[extra] 
+python3 -m pip install stable-baselines3[extra]
+
+# in the future just pyglet
+python3 -m pip instal pyglet==1.5.27
