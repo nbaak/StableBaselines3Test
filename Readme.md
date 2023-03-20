@@ -23,6 +23,7 @@ If 'libnvinfer.so.7' is missing, do the steps below
 # Install tensorrt
 ```bash
 python3 -m pip install tensorrt
+```
 
 ## Copy
 ```bash
