@@ -24,13 +24,18 @@ If 'libnvinfer.so.7' is missing, do the steps below
 python3 -m pip install tensorrt
 
 ## Copy
+```bash
 cp ~/.local/lib/python3.10/site-packages/tensorrt/libnvinfer.so.8 ~/.local/lib/python3.10/site-packages/tensorrt/libnvinfer.so.7
 cp ~/.local/lib/python3.10/site-packages/tensorrt/libnvinfer_plugin.so.8 ~/.local/lib/python3.10/site-packages/tensorrt/libnvinfer_plugin.so.7
+```
 
 ## OR Symlinc
+```bash
 ln -s ~/.local/lib/python3.10/site-packages/tensorrt/libnvinfer.so.8 ~/.local/lib/python3.10/site-packages/tensorrt/libnvinfer.so.7
 ln -s ~/.local/lib/python3.10/site-packages/tensorrt/libnvinfer_plugin.so.8 ~/.local/lib/python3.10/site-packages/tensorrt/libnvinfer_plugin.so.7
 
+```
 ## add to bashrc
+```bash
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/k3nny/.local/lib/
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/k3nny/.local/lib/python3.10/site-packages/tensorrt/
