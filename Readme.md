@@ -5,6 +5,7 @@ Having a little fun with Stable Baselines 3 and the Lunar Lander from Open AI Gy
 
 # How to install Stable Baselines 3 with CUDA and Tensorboard
 
+```bash
 sudo apt install nvidia-cuda-toolkit <br>
 sudo apt install python3-pip <br>
 sudo apt install python3-opencv <br>
@@ -16,11 +17,13 @@ python3 -m pip install torch torchvision torchaudio <br>
 python3 -m pip install stable-baselines3[extra] <br>
 
 python3 -m pip install tensorflow tensorboard <br>
+```
 
 # ON ERROR
 If 'libnvinfer.so.7' is missing, do the steps below
 
 # Install tensorrt
+```bash
 python3 -m pip install tensorrt
 
 ## Copy
