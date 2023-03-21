@@ -38,6 +38,7 @@ ln -s ~/.local/lib/python3.10/site-packages/tensorrt/libnvinfer_plugin.so.8 ~/.l
 
 ```
 ## add to bashrc
+just set you own home dir ;)
 ```bash
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/k3nny/.local/lib/
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/k3nny/.local/lib/python3.10/site-packages/tensorrt/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/k3nny/.local/lib/:/home/k3nny/.local/lib/python3.10/site-packages/tensorrt/:/home/k3nny/.local/lib/python3.10/site-packages/nvidia/cublas/lib/:/home/k3nny/.local/lib/python3.10/site-packages/nvidia/cufft/lib/:/home/k3nny/.local/lib/python3.10/site-packages/nvidia/curand/lib/:/home/k3nny/.local/lib/python3.10/site-packages/nvidia/cusolver/lib/:/home/k3nny/.local/lib/python3.10/site-packages/nvidia/cusparse/lib/
+```
