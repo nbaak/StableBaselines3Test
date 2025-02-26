@@ -8,7 +8,7 @@ Having a little fun with Stable Baselines 3 and the Lunar Lander from Open AI Gy
 ```bash
 sudo apt install swig
 
-python3 -v venv sb3
+python3 -m venv sb3
 
 . sb3/bin/activate
 
