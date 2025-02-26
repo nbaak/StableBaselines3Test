@@ -1,9 +1,9 @@
 
 import os
-import gym
-from stable_baselines3 import PPO as Algorithm
+import gymnasium as gym
+from stable_baselines3 import DQN as Algorithm
 
-SAVENAME  = "PPOv2" # should contain the algorithm
+SAVENAME  = "DQNv1" # should contain the algorithm
 
 SAVE_REPLAY = True
 
@@ -14,35 +14,37 @@ if SAVE_REPLAY:
     if not os.path.exists(SCREENSHOT_PATH):
         os.makedirs(SCREENSHOT_PATH)
         
-        
 
-env = gym.make("LunarLander-v2")
+env = gym.make("LunarLander-v3", render_mode="rgb_array")
 env.reset()
 
-model_file = "2990000"
+model_file = "230000"
 models_dir = f"models/{SAVENAME}"
 model_path = f"{models_dir}/{model_file}"
 
-model = Algorithm.load(model_path, env=env)
+model = Algorithm.load(model_path, env=env, verbose=1)
 
 episodes = 10
 frames = []
+vec_env = model.get_env()
+
 for ep in range(episodes):
-    obs = env.reset()
+    obs = vec_env.reset()
     done = False    
     
     while not done:
         if SAVE_REPLAY:
-            frames.append(env.render(mode="rgb_array"))
-        else:
-            env.render()
-              
-        action, _ = model.predict(obs)
-        obs, reward, done, info = env.step(action)
+            frames.append(vec_env.render("rgb_array"))
 
-if SAVE_REPLAY:        
+        else:
+            vec_env.render("human")
+              
+        action, _ = model.predict(obs, deterministic=True)
+        obs, reward, done, info = vec_env.step(action)
+
+if SAVE_REPLAY:
     save_images_as_animation(frames, f"{SCREENSHOT_PATH}/anim.gif")
         
-#    save_frames_as_gif(frames, SCREENSHOT_PATH)
-        
+# save_frames_as_gif(frames, SCREENSHOT_PATH)
+print("END")
 env.close()

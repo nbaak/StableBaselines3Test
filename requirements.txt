@@ -1,0 +1,8 @@
+tensorflow[and-cuda]
+opencv-python
+gymnasium
+box2d
+torch
+torchvision
+torchaudio
+stable-baselines3[extra]
