@@ -1,0 +1,6 @@
+.project
+.pydevproject
+.settings/
+src/logs/
+src/models/
+src/screenshots/
